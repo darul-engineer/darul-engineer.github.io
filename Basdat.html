@@ -48,7 +48,7 @@
                                 <span>Assignment</span>
                                 <div class="dropdown-content">
                                     <a href="#tugas1">Tugas 1</a>
-                                    <!-- <a href="#week2">Minggu 2</a> -->
+                                    <a href="#tugas2">Tugas 2</a>
                                 </div>
                             </div>
                         </li>
@@ -123,6 +123,129 @@
                     </div>
                   </div>
             </div>
+        </section>
+       <!-- TBO Section tugas 2-->
+       <section class="page-section" id="tugas2">
+        <div class="container">
+            <!-- TBO Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Evaluation Plan</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- TBO Section Card-->
+            <div class="card-group">
+                <div class="card">
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                  <div class="card-body">
+                    <h5 class="card-title">PROSES QUERY</h5>
+                    <p class="card-text">Jadi, cara kerja dari sebuah query ialah melalui beberapa proses. Proses -proses tersebut diantaranya : <br>
+                        1. Parsing — merupakan proses pertama, dimana ia memeriksa sintaks query yang ditulis. jadi jika terjadi kesalahan di sintaks, proses selanjutnya otomatis tidak akan dilakukan dan mendapatkan peringatan dari DBMS<br>
+                        2. Translasi — selanjutnya, apabila query sudah benar secara sintaks, maka query tersebut akan ditranslasi menjadi aljabar relational. Hal ini musti dilakukan sebab sintaks SQL adalah bahasa pemrograman tingkat tinggi sehingga perlu dirubah ke bahasa yang dimengerti oleh mesin. <br>
+                        3. Optimasi — proses ini sangat panjang untuk dapat dijabarkan secara luas. simplenya… satu buah query yang sama bisa dibuat lebih dari satu aljabar relational yang berbeda. Maka dari itu, DBMS akan memilih yang mana yang akan dieksekusi. Nah. satu ekspresi aljabar relational yang terbentuk tersebut disebut dengan istilah evaluation plan (EP). EP ini akan dihitung costnya. Cost ini diperoleh dari informasi statistik yang ada di database catalog. Ada banyak parameter biaya yang diperhitungkan. Misalnya banyaknya baris maupun blok di suatu relasi. Proses ini sangat penting jika jumlah baris query-nya sudah memasuki angka jutaan.<br>
+                        4. Eksekusi — setelah evaluation plan, akan dilakukan eksekusi dan pengambilan data yang diperlukan dari database, nanti hasilnya pun akan ditampilkan di monitor</p>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    <p class="card-text">Sebagian besar sistem database menyediakan jalan untuk menampilkan evaluation plan yang dipilih untuk menjalankan query tertentu. Biasanya paling bagus menggunakan GUI yang disediakan dengan sistem database untuk menampilkan evaluation plan. Lagi pula, jika kita menggunakan command line interface, beberapa database akan menerima berbagai perintah “explain query”, dimana menampilkan eksekusi plan terpilih untuk query tertentu. Adapun sintaks yang sebenarnya bervariasi, tergantung dari sistem database yang digunakan.</p>
+                    </div>
+                </div>
+                <!-- <div class="card"> -->
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                  <!-- <div class="card-body">
+                    <h5 class="card-title">Fungsi Ilmu Teori Bahasa Dan Otomata</h5>
+                    <p class="card-text">Tata bahasa adalah model yang berguna saat merancang perangkat lunak yang memproses data dengan struktur rekursif. Contoh paling terkenal adalah \ parser, "komponen kompilator yang menangani fitur bertingkat rekursif dari bahasa pemrograman tipikal, seperti ekspresi | aritmatika, bersyarat, dan seterusnya.</p>
+                    <p class="card-text">Ekspresi Reguler juga menunjukkan struktur data, terutama string teks. Seperti yang akan kita lihat di Bab 3, pola string yang mereka gambarkan persis sama dengan yang bisa dijelaskan oleh nite automata. Gaya ekspresi ini berbeda secara signifikan dari gaya tata bahasa.</p> -->
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                  <!-- </div>
+                </div> -->
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Evaluasi Ekspresi Oleh DBMS</h5>
+                        <p class="card-text">Untuk mengevaluasi ekspresi yang membawa banyak operasi di dalamnya, kita dapat melakukan komputasi setiap operasi satu per satu. Namun, dalam sistem pemrosesan kueri, kami menggunakan dua metode untuk mengevaluasi ekspresi yang membawa banyak operasi. Metode tersebut adalah: <br>
+
+                            1. Materialization
+                            Dalam metode ini, ekspresi yang diberikan mengevaluasi satu operasi relasional dalam satu waktu. Selain itu, setiap operasi dievaluasi dalam urutan atau urutan yang sesuai. Setelah mengevaluasi semua operasi, keluarannya diwujudkan dalam hubungan sementara untuk penggunaan selanjutnya. Ini membawa metode materialisasi pada kerugian. Kerugiannya adalah bahwa ia perlu membangun hubungan sementara tersebut untuk mewujudkan hasil operasi yang dievaluasi, masing-masing. Hubungan sementara ini ditulis pada disk kecuali ukurannya kecil. <br>
+                            
+                            2. Pipelining
+                            Pipelining adalah metode alternatif atau pendekatan untuk metode materialisasi. Dalam pipelining, ini memungkinkan kita untuk mengevaluasi setiap operasi relasional ekspresi secara bersamaan dalam pipeline. Dalam pendekatan ini, setelah mengevaluasi satu operasi, keluarannya diteruskan ke operasi berikutnya, dan rantai berlanjut hingga semua operasi relasional dievaluasi secara menyeluruh. Jadi, tidak ada persyaratan untuk menyimpan hubungan sementara dalam pemipaan. Keuntungan pipelining seperti itu membuatnya menjadi pendekatan yang lebih baik dibandingkan dengan pendekatan yang digunakan dalam metode materialisasi. Bahkan biaya dari kedua pendekatan tersebut dapat memiliki perbedaan selanjutnya di antara keduanya. Namun, kedua pendekatan tersebut menjalankan peran terbaik dalam kasus yang berbeda. Dengan demikian, kedua cara tersebut layak di tempatnya.</p>
+                    </div>
+                </div> -->
+            </div>
+            <!-- TBO Section Card-->
+            <div class="card-group">
+                <div class="card">
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                  <div class="card-body">
+                    <h5 class="card-title">Tampilan Evaluation Plan Pada MySQL</h5>
+                    <p class="card-text">
+                        MySQL menggunakan sintaks explain query yang sama seperti PostgreSQL. Tetapi, outputnya adalah tabel yang isinya tidak mudah dipahami. Bagaimanapun, eksekusi show warning setelah perintah explain tersebut menampilkan evaluation plan dengan format yang lebih mudah dipahami dan dibaca.
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title">Contoh Menampilkan Evaluation Plan Pada MySQL</h5>
+                      <img src="assets/img/1.png" class="card-img-top" alt="...">
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                  </div>
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Contoh Menampilkan Evaluation Plan Pada MySQL</h5> -->
+                      <img src="assets/img/2.png" class="card-img-top" alt="...">
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                  </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Contoh Menampilkan Evaluation Plan Pada MySQL</h5> -->
+                      <img src="assets/img/5.png" class="card-img-top" alt="...">
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                  </div>
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Contoh Menampilkan Evaluation Plan Pada MySQL</h5> -->
+                      <img src="assets/img/4.png" class="card-img-top" alt="...">
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                  </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">PROSES QUERY</h5> -->
+                      <p class="card-text">Penjelasan dari tabel di atas, Setiap baris di EXPLAIN berisi bidang berikut:<br>
+                        • id - Dalam kebanyakan kasus, bidang id akan menampilkan nomor urut SELECT query untuk baris yang di miliki. Kueri di atas tidak berisi subkueri atau gabungan, jadi id untuk kedua baris adalah 1, karena sebenarnya hanya ada 1 kueri.<br>
+                        • select_type - jenis SELECT query dalam kasus ini adalah simple query karena tidak berisi subkueri atau gabungan. Dalam kasus yang lebih kompleks, ini akan berisi tipe lain seperti SUBQUERY (untuk subkueri), UNION (pernyataan kedua atau yang lebih baru dalam sebuah gabungan), DERIVED (tabel turunan) dan lainnya. Informasi lebih lanjut tentang access_types dapat ditemukan di dokumen MySQL.<br>
+                        • table - nama tabel atau alias yang dirujuk baris ini. Pada gambar di atas, Anda dapat melihat 'v' dan 'p' disebutkan, karena itu adalah alias yang ditentukan untuk tabel suara dan posting.
+                        <br>
+                        • type - mendefinisikan bagaimana tabel diakses / digabungkan. Jenis akses paling populer yang biasanya akan Anda lihat adalah yang berikut, diurutkan dari yang terburuk hingga yang terbaik: ALL, index, range, ref, eq_ref, const, system. Seperti yang Anda lihat di JELASKAN, suara tabel adalah tabel pertama yang diakses, menggunakan ALL access_type, yang berarti MySQL akan memindai seluruh tabel, tanpa indeks, sehingga akan melalui lebih dari 14 juta catatan. Tabel posting kemudian diakses menggunakan tipe akses eq_ref. Selain tipe sistem dan konst, eq_ref adalah tipe gabungan terbaik. Database akan mengakses satu baris dari tabel ini untuk setiap kombinasi baris dari tabel sebelumnya. <br>
+                        • possible_keys - Indeks opsional yang dapat dipilih MySQL, untuk mencari baris dalam tabel. Beberapa indeks dalam daftar ini sebenarnya tidak relevan, sebagai hasil dari urutan eksekusi yang dipilih MySQL. Secara umum, MySQL dapat menggunakan indeks untuk menggabungkan tabel. Dengan demikian, ia tidak akan menggunakan indeks pada kolom gabungan tabel pertama, karena ia akan tetap melalui semua barisnya (kecuali baris yang difilter oleh klausa WHERE). <br>
+                        • key - Kolom ini menunjukkan indeks sebenarnya yang memutuskan untuk digunakan MySQL. Ini tidak berarti ia akan menggunakan seluruh indeks, karena ia dapat memilih untuk menggunakan hanya sebagian dari indeks, dari sisi paling kiri. <br>
+                        • key_len - Ini adalah salah satu kolom penting dalam output penjelasan. Ini menunjukkan panjang kunci yang memutuskan untuk digunakan MySQL, dalam byte. Dalam EXPLAIN output di atas, MySQL menggunakan seluruh indeks PRIMARY (4 byte). Kita tahu itu karena satu-satunya kolom di indeks PRIMARY adalah Id, yang didefinisikan sebagai INT => 4 byte. Sayangnya, tidak ada cara yang lebih mudah untuk mengetahui bagian mana dari indeks yang digunakan oleh MySQL, selain menggabungkan panjang semua kolom dalam indeks dan membandingkannya dengan nilai key_len. <br>
+                        • rows - Menunjukkan jumlah baris yang menurut MySQL harus diperiksa dari tabel ini, untuk menjalankan kueri. Ini hanya perkiraan. Biasanya, jumlah baris yang tinggi berarti ada ruang untuk pengoptimalan kueri. <br> 
+                        • filtered - Jumlah baris yang tidak difilter oleh kondisi di klausa WHERE. Baris ini akan digabungkan ke tabel di baris berikutnya dari rencana MENJELASKAN. Seperti yang disebutkan sebelumnya, ini juga angka perkiraan, jadi MySQL bisa salah dengan perkiraan ini. <br>
+                        • extra - Berisi lebih banyak informasi tentang pemrosesan kueri. Mari kita lihat ekstra untuk kueri kita: <br>
+                        1. using where - Klausa WHERE digunakan untuk membatasi baris mana yang diambil dari tabel saat ini (suara) dan dicocokkan dengan tabel berikutnya (posting). <br>
+                        2. using temporary - Sebagai bagian dari pemrosesan kueri, MySQL harus membuat tabel sementara, yang dalam banyak kasus dapat mengakibatkan penalti kinerja. Dalam kebanyakan kasus, ini akan menunjukkan bahwa salah satu klausa ORDER BY atau GROUP BY dijalankan tanpa menggunakan indeks. Ini juga bisa terjadi jika klausa GROUP BY dan ORDER BY menyertakan kolom berbeda (atau dalam urutan berbeda). <br>
+                        3. using filesort - MySQL dipaksa untuk melakukan penerusan lain pada hasil kueri untuk mengurutkannya. Dalam banyak kasus, ini juga dapat mengakibatkan penalti kinerja.</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      <p class="card-text">Sebagian besar sistem database menyediakan jalan untuk menampilkan evaluation plan yang dipilih untuk menjalankan query tertentu. Biasanya paling bagus menggunakan GUI yang disediakan dengan sistem database untuk menampilkan evaluation plan. Lagi pula, jika kita menggunakan command line interface, beberapa database akan menerima berbagai perintah “explain query”, dimana menampilkan eksekusi plan terpilih untuk query tertentu. Adapun sintaks yang sebenarnya bervariasi, tergantung dari sistem database yang digunakan.</p>
+                      </div>
+                  </div>
+            </div>
+        </div>
         </section>
         <!-- Footer-->
         <footer class="footer text-center">
