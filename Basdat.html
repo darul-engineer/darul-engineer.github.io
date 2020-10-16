@@ -50,6 +50,7 @@
                                     <a href="#tugas1">Tugas 1</a>
                                     <a href="#tugas2">Tugas 2</a>
                                     <a href="#tugas3">Tugas 3</a>
+                                    <a href="#tugas4">Pertemuan 9</a>
                                 </div>
                             </div>
                         </li>
@@ -354,6 +355,75 @@
                   </div>
             </div>
         </section>
+        <!-- TBO section 4 pertemuan 9 -->
+        <section class="page-section" id="tugas4">
+          <div class="container">
+              <!-- TBO Section Heading-->
+              <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Transaction Concept</h2>
+              <!-- Icon Divider-->
+              <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                  <div class="divider-custom-line"></div>
+              </div>
+              <!-- TBO Section Card-->
+              <div class="card-group mb-3">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title">Transaction</h5>
+                      <p class="card-text">Transaction adalah unit eksekusi program yang mengakses dan memungkinkan untuk memperbarui berbagai item data. Transaction merupakan satu fitur DBMS relasional yang cukup penting bahkan menjadi keunggulan dari DBMS relasional secara umum. <br> Dua masalah utama yang harus ditangani dalam transaksi yaitu : <br>
+                          1. Berbagai jenis kegagalan, seperti kegagalan hardware dan sistem crash<br>
+                          2. Eksekusi bersamaan dari beberapa transaksi<br> <br>
+
+                          Untuk menjaga integritas data sistem database harus memastikan: <br>
+
+                          1. Atomicity <br>
+                          Semua operasi transaksi tercermin dengan benar di database atau tidak. <br>
+                          
+                          2. Consistency <br>
+                          Data tetap konsisten baik sebelum maupun sesudah transaksi <br>
+                        
+                          3. Isolation <br>
+                          Jika ada beberapa transaksi yang terjadi, maka transaksi yang pertama akan di eksekusi terlebih dahulu sampai selesai. Kemudian diikuti oleh transaksi yang lainnya. Isolasi dapat dilakukan dengan menjalankan transaksi secara serial. <br>
+                          4. Durability <br>
+                          Memastikan agar semua perubahan selama transaksi tetap tersimpan di database secara permanen meskipun transaksi yang dilakukan mengalami kegagalan.</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="card-group">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title">Contoh Kasus Transaction</h5>
+                      <p class="card-text">Contoh kasus dari transaksi ini adalah misalnya pada suatu perpusatakaan kota terdapat seseorang yang ingin meminjam buku Sejarah. Jumlah buku sejarah yang telah dipinjam adalah adalah 15 buku dan jumlah buku Sejarah yang tersisa yaitu 3 buku.
+                        Berikut adalah proses transaksinya :<br>
+                          1. read (bukuDipinjam)<br>
+                          2. bukuDipinjam = bukuDipinjam + 1<br>
+                          3. write (bukuDipinjam) <br>
+                          4. read (bukuTersisa) <br>
+                          5. bukuTersisa = bukuTersisa - 1 <br>
+                          6. write (bukuTersisa) <br> <br>
+
+                          Berikut, penjelasan ACID pada contoh kasus mengenai perpusatakaan ini:<br>
+
+                          1. Atomicity <br>
+                          Semua step pada transaksi ini harus dilakukan. Jika ada step yang gagal saat melakukan transaksi, contohnya pada step yang ke-3, maka seluruh perubahan akan dibatalkan dan dikembalikan ke kondisi awal serta transaksi dianggap gagal. <br>
+                          
+                          2. Consistency <br>
+                          Transaksi pada kasus ini dikatakan konsiten jika, jumlah stok buku Sejarah sesudah dan sebelum transaksi sama. Sebelum transaksi, jumlah buku yang tersisa yaitu 3 buku dan jumlah buku yang telah dipinjam yaitu 15 buku. Sehingga, jumlah stok buku secara keseluruhan sebelum transaksi yaitu 18 buku. Setelah transaksi dilakukan, jumlah buku Dipinjam ditambah 1 sehingga hasilnya 16 buku, dan jumlah buku yang tersisa dikurang 1 sehingga hasilnya 2 buku. Sehingga, jumlah stok buku secara keseluruhan setelah transaksi yaitu 18 buku.<br> Dan dapat disimpulkan, bahwa kasus ini dapat dikatakan konsisten karena jumlah stok buku Sejarah sesudah dan sebelum transaksi sama.<br>
+                        
+                          3. Isolation <br>
+                          Jika ada transaksi lain yang terjadi saat transaksi yang pertama dilakukan, maka transaksi yang kedua ini harus menunggu sampai transaksi yang pertama selesai. Hal ini dilakukan untuk menjaga agar data tersebut tetap konsisten.<br>
+                          4. Durability <br>
+                          Setelah transaksi selesai, Semua perubahan akan disimpan didalam database meskipun ada kegagalan sistem yang terjadi.</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </section>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
